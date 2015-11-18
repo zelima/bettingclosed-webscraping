@@ -73,12 +73,12 @@ def create_csv_database():
     updates with scraped data
     """
     database = get_data(URL)
-    title = 'Prediction ' + str(database[1][0].replace('/', '_'))[:10]
-    with open(title + '.csv', 'w', newline = '') as file:
+    title = 'Prediction ' + str(database[1][0].replace('/', '_'))[:10]+ '.csv'
+    with open(title, 'w', newline = '') as file:
         write_file = csv.writer(file)
         write_file.writerows(database)
     print ("the file \"" + title + "\" is created and updated with data.")
-    print ( "File direction: " + str(os.path.abspath(title)) + '.csv')
+    print ( "File direction: " + str(os.path.abspath(title)))
 
     
 create_csv_database()
